@@ -4,6 +4,7 @@ Requirements
 
 As a software engineer, I expect the application to encrypt credentials.
 As a software engineer, I want the passwords to be encrypted and stored within an encrypted file.
+
 2. Authentication Verification
 
 Requirements
