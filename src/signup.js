@@ -1,6 +1,8 @@
 const { scryptSync, randomBytes } = require('crypto');
 const utility = require('./utility');
 const mongoose = require("mongoose");
+const dotenv = require("dotenv");
+dotenv.config();
 
  //Schema
  const userSchema = new mongoose.Schema({
@@ -10,7 +12,6 @@ const mongoose = require("mongoose");
   
   const User = mongoose.model('User', userSchema);
 
-  URI = "mongodb+srv://chocolatepudding723:hqaXdk0UD54OX0WA@cluster0.gh6s6uf.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
 
 
  async function signupUsers() {
@@ -43,7 +44,7 @@ const mongoose = require("mongoose");
 
      async function main() {
             try {
-                await mongoose.connect(URI, {
+                await mongoose.connect(process.env.URI, {
                     useNewUrlParser: true,
                     useUnifiedTopology: true,
                 });
@@ -56,6 +57,7 @@ const mongoose = require("mongoose");
             }
         }
 
+module.exports = { signupUsers};
       
     main();
   

@@ -25,9 +25,12 @@ function login(email, password, users) {
 
 // Read the encrypted user data from users.txt using the readJson function.
 const encryptedUsers = utility.readJson('password.enc.txt');
+const [, , filename, email, password] = process.argv;
+console.log(login(email, password, encryptedUsers)); //updated for version 1 and final
+
 
 // Test cases
-console.log(login('henry.taylor@edu.com', 'educatorbest', encryptedUsers)); // true
-console.log(login('sm.cho@hello.com', '123', encryptedUsers)); // false
-console.log(login('noname@hello.com', '1234', encryptedUsers)); // false
-console.log(login('alan.may@best.com', '', encryptedUsers)); // false
+//console.log(login('henry.taylor@edu.com', 'educatorbest', encryptedUsers)); // true
+//console.log(login('sm.cho@hello.com', '123', encryptedUsers)); // false
+//console.log(login('noname@hello.com', '1234', encryptedUsers)); // false
+//console.log(login('alan.may@best.com', '', encryptedUsers)); // false
